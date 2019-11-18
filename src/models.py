@@ -28,5 +28,6 @@ class Image(db.Model):
     def serialize(self):
         return{
           "image_name": self.image_name,
-          "user_id": self.user_id
+          "user_id": self.user_id,
+          "created_date": self.created_date
         }
