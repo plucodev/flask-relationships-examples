@@ -24,7 +24,7 @@ class Image(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     image_name = db.Column(db.String(1000), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-
+    created_date = db.Column(db.DateTime, default=datetime.datetime.now(), nullable=True)
     def serialize(self):
         return{
           "image_name": self.image_name,
